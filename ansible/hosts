@@ -1,8 +1,0 @@
-[galera]
-epad-infra-backend_nodes-yuid3rlezzbk-0-qs23beyna553 ansible_ssh_host=71.74.180.57 ansible_ssh_user=ubuntu
-epad-infra-backend_nodes-yuid3rlezzbk-1-cpe5il6z34eb ansible_ssh_host=71.74.180.58 ansible_ssh_user=ubuntu
-epad-infra-backend_nodes-yuid3rlezzbk-2-xs6xx7yfa6b3 ansible_ssh_host=71.74.180.6 ansible_ssh_user=ubuntu
-
-[etherpad]
-epad-infra-frontend_nodes-wclw62h3msaq-0-z62eoz3mwvxm ansible_ssh_host=71.74.180.55 ansible_ssh_user=ubuntu
-epad-infra-frontend_nodes-wclw62h3msaq-1-2yzoo4juoact ansible_ssh_host=71.74.180.54 ansible_ssh_user=ubuntu
