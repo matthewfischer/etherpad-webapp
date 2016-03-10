@@ -1,0 +1,5 @@
+---
+# this may fail if the mysql vip isn't up, so ignore issues.
+- name: Start etherpad-lite
+  ignore_errors: yes
+  service: name=etherpad-lite state=restarted

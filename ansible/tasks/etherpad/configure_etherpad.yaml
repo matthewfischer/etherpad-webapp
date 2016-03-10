@@ -1,0 +1,20 @@
+---
+- name: Create an init script
+  copy: src=files/etc/init/etherpad-lite.conf
+            dest=/etc/init/etherpad-lite.conf
+            owner=root group=root mode=0744
+
+- name: Configure etherpad
+  template: src=templates/usr/local/etherpad-lite/settings.json.template
+            dest=/usr/local/etherpad-lite/settings.json
+            owner=etherpad-lite group=admin mode=0744
+
+- name: Setup logrotate for etherpad
+  template: src=files/etc/logrotate.d/etherpad-lite
+            dest=/etc/logrotate.d/etherpad-lite
+
+- name: set API key
+  shell: echo {{ etherpad_api_key }} > /usr/local/etherpad-lite/APIKEY.txt
+
+- name: fix ownership of API key
+  file: name=/usr/local/etherpad-lite/APIKEY.txt owner=etherpad-lite group=admin mode=0744

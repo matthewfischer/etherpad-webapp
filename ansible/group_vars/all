@@ -1,0 +1,5 @@
+etherpad_mysql_pass: vHrMDuqsN2rRFGQq8BFu
+clustercheck_mysql_pass: oi8dh3un23jknc90oall
+mysql_vip: 71.74.178.37
+etherpad_api_key: 38yhiudhnejkn32kk
+debian_node_version: 5.x

@@ -1,0 +1,6 @@
+---
+- name: Clone etherpad
+  git: repo=git://github.com/ether/etherpad-lite.git dest=/usr/local/etherpad-lite
+
+- name: Fix permissions
+  file: name=/usr/local/etherpad-lite owner=etherpad-lite group=admin recurse=yes

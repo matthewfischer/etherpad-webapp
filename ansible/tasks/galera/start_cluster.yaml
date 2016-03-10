@@ -1,0 +1,3 @@
+---
+- name: Bootstrap the cluster
+  command: /usr/bin/bootstrap_mysql.sh
