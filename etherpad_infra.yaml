@@ -13,11 +13,11 @@ parameters:
   be_flavor_name:
     type: string
     description: Flavor for the DB
-    default: m3.1CPU.2GB
+    default: m3.2CPU.4GB
   fe_flavor_name:
     type: string
     description: Flavor for the Front End
-    default: m3.1CPU.2GB
+    default: m3.2CPU.4GB
   image_name:
     type: string
     description: Image name for the VM.
@@ -29,7 +29,7 @@ parameters:
   frontend_server_count:
     type: string
     description: How many front servers to setup
-    default: 2
+    default: 3
   volume_size:
     type: string
     description: volume size to make in GB
