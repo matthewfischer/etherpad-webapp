@@ -3,3 +3,6 @@
 - name: Start etherpad-lite
   ignore_errors: yes
   service: name=etherpad-lite state=restarted
+  # wait for 10 seconds before we finish this so that etherpad can come up
+- name: Delay for 10 seconds after restarting the service before moving on
+  wait_for: port=9001 delay=10
