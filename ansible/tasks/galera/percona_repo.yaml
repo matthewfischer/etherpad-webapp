@@ -5,11 +5,11 @@
            state=present
 
 - name: Add Percona repository
-  apt_repository: repo='deb http://repo.percona.com/apt precise main'
+  apt_repository: repo='deb http://repo.percona.com/apt trusty main'
                   state=present
 
 - name: Add Percona source repository
-  apt_repository: repo='deb-src http://repo.percona.com/apt precise main'
+  apt_repository: repo='deb-src http://repo.percona.com/apt trusty main'
                   state=present
 
 - name: Update apt cache
