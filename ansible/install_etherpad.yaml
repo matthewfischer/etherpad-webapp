@@ -6,4 +6,9 @@
     - include: tasks/etherpad/create_etherpad_user.yaml
     - include: tasks/etherpad/clone_etherpad.yaml
     - include: tasks/etherpad/configure_etherpad.yaml
+
+- name: Start etherpad serially
+  hosts: etherpad
+  serial: 1
+  tasks:
     - include: tasks/etherpad/start_etherpad.yaml
