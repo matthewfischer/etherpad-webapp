@@ -1,3 +1,7 @@
 ---
-- name: Bootstrap the cluster
+- name: Bootstrap the mysql/galera
   command: /usr/bin/bootstrap_mysql.sh
+
+# wait for 10 seconds before we finish this so that etherpad can come up
+- name: Delay for 10 seconds after restarting the service before moving on
+  wait_for: port=3306 delay=10
