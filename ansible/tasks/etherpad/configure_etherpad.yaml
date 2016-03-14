@@ -4,6 +4,9 @@
             dest=/etc/init/etherpad-lite.conf
             owner=root group=root mode=0744
 
+- name: Symlink init script so that service etherpad-lite restart works
+  file: src=/lib/init/upstart-job dest=/etc/init.d/etherpad-lite state=link
+
 - name: Configure etherpad
   template: src=templates/usr/local/etherpad-lite/settings.json.template
             dest=/usr/local/etherpad-lite/settings.json
