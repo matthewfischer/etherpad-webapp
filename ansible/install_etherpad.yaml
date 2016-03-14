@@ -3,8 +3,8 @@
   hosts: etherpad_*
   tasks:
     - include: tasks/etherpad/install_etherpad.yaml
-    - include: tasks/etherpad/create_etherpad_user.yaml
     - include: tasks/etherpad/clone_etherpad.yaml
+    - include: tasks/etherpad/create_etherpad_user.yaml
     - include: tasks/etherpad/configure_etherpad.yaml
 
 - name: Start etherpad serially
