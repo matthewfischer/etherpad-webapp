@@ -2,9 +2,9 @@
 
 {% set cluster_members = [] -%}
 {%- for node in groups['galera'] %}
-  {%- set _ = cluster_members.append(ansible_ssh_host) -%}
-{% endfor -%}
-for i in $(echo {{ ",".join(cluster_members) }} | tr ',' ' '); do
+  {%- set _ = cluster_members.append(hostvars[node]['ansible_ssh_host']) -%}
+  {% endfor -%}
+for i in $(echo {{ " ".join(cluster_members) }}); do
   if [ "${i}" != "{{ ansible_ssh_host }}" ]; then
     nc -z ${i} 4567
     if [ "${?}" == "0" ]; then
