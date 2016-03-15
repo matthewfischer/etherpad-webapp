@@ -6,7 +6,7 @@
   mysql_db: name=etherpad_lite encoding=utf8mb4 collation=utf8mb4_bin login_user=root
 
 - name: etherpad db user
-  mysql_user: user=etherpad host="71.74.%" password={{ etherpad_mysql_pass }} priv=etherpad_lite.*:CREATE,ALTER,SELECT,INSERT,UPDATE,DELETE login_user=root
+  mysql_user: user=etherpad host="10.10.0.%" password={{ etherpad_mysql_pass }} priv=etherpad_lite.*:CREATE,ALTER,SELECT,INSERT,UPDATE,DELETE login_user=root
 
 - name: clustercheck db user
   mysql_user: user=clustercheck host=localhost password={{ clustercheck_mysql_pass }} priv="*.*:GRANT,RELOAD,REPLICATION CLIENT" login_user=root
