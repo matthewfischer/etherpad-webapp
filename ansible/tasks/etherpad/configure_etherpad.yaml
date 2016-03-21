@@ -18,6 +18,7 @@
 
 - name: set API key
   shell: echo {{ etherpad_api_key }} > /usr/local/etherpad-lite/APIKEY.txt
+  no_log: true
 
 - name: fix ownership of API key
   file: name=/usr/local/etherpad-lite/APIKEY.txt owner=etherpad-lite group=admin mode=0744
