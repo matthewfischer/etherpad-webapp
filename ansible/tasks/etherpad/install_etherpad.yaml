@@ -30,3 +30,8 @@
   with_items:
     - ep_tables2
     - ep_list_pads
+
+- name: Remove unwanted etherpad plugins
+  npm: name={{ item }} path=/usr/local/etherpad-lite/node_modules production=yes state=absent
+  with_items:
+    - ep_pad-lister
