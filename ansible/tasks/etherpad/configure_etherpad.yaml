@@ -11,6 +11,7 @@
   template: src=templates/usr/local/etherpad-lite/settings.json.template
             dest=/usr/local/etherpad-lite/settings.json
             owner=etherpad-lite group=admin mode=0744
+  no_log: true
 
 - name: Setup logrotate for etherpad
   template: src=files/etc/logrotate.d/etherpad-lite
