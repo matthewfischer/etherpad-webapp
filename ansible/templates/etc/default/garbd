@@ -3,10 +3,10 @@
 
 {% set cluster_members = [] -%}
 {%- for node in groups['galera'] %}
-  {%- set _ = cluster_members.append(hostvars[node]['ansible_ssh_host']) -%}
+  {%- set _ = cluster_members.append(hostvars[node]['ansible_ssh_host']+":4567") -%}
 {% endfor -%}
 # A space-separated list of node addresses (address[:port]) in the cluster
-GALERA_NODES="{{ ":4567,".join(cluster_members) }}"
+GALERA_NODES="{{ ",".join(cluster_members) }}"
 
 # Galera cluster name, should be the same as on the rest of the nodes.
 GALERA_GROUP="etherpad_cluster"
